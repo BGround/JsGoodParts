@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>闭包</p>
+
+<button type="button" onclick="myFunction()">单击这里！</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(){
+	var a = 3, b= 5;
+	var bar = function() {
+		var b =7 , c = 11;
+		console.log("1a:"+a+ " b:"+b);
+		a += b+c;
+		console.log("2a:"+a+ " b:"+b);
+	}
+	console.log("3a:"+a+ " b:"+b);
+	bar();
+	console.log("4a:"+a+ " b:"+b);
+	//执行顺序是 3a , 1a , 2a, 4a
+}
+</script>
+
+</body>
+</html>
