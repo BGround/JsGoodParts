@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript闭包</h1>
+
+<!-- <button onclick="myFunction()">试一试1</button>
+<button onclick="myFunction()">试一试2</button>
+<button onclick="myFunction()">试一试3</button> -->
+
+<p>node1</p>
+<p>node2</p>
+<p>node3</p>
+<script>
+
+function myFunction () {
+    // for (var i=0, link; i<5; i++) {
+    //     link = document.createElement("a");
+    //     link.innerHTML = "Link " + i + "<br>";
+    //     link.onclick = function () {
+    //         alert(i);       // 都为 5 
+    //     };
+    //     document.body.appendChild(link);
+    // }
+    
+    // for (var i=0, link; i<5; i++) {
+    //     link = document.createElement("a");
+    //     link.innerHTML = "Link " + i + "<br>";
+    //     link.onclick = function (num) {
+    //         return function () {
+    //             alert(num);  // num 保存着这一块的值, 在内存里面
+    //         };
+    //     }(i);  // 注意这里的 "();" 是函数直接就执行了, 然后把 i 作为参数进去
+    //     document.body.appendChild(link);
+    // }
+    var nodes = document.getElementsByTagName("p");
+    var len = nodes.length;
+    console.log(nodes);
+    var add_the_handlers = function(nodes) {
+        for(i=0; i < len; i++) {
+            nodes[i].onclick = function(e) {
+                alert(i);
+                nodes[i].style.backgroundColor = "red";
+            };
+        }
+    };
+    add_the_handlers();
+}
+window.onload = myFunction;
+</script>
+
+</body>
+</html>
+

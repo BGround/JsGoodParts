@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript闭包</h1>
+
+<button onclick="myFunction()">试一试</button>
+
+<script>
+function myFunction() {
+    var lev = 1;
+    var fade = function(node) {
+        var step = function() {
+            var hex = lev.toString(16);
+            node.style.backgroundColor = '#FFFF' + hex + hex;
+            if(lev < 15) {
+                lev += 1;
+                setTimeout(step,100);
+            }
+        };
+        setTimeout(step,100);
+    };
+
+    fade(document.body);
+}
+</script>
+
+</body>
+</html>
+
