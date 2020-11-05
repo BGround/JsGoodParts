@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>构造器调用模式</title>
+	</head>
+	<body>
+		<script>
+			var Instance = function(string) {
+				this.status = string;
+			}
+			
+			Instance.prototype.get_status = function() {
+				return status;
+			}
+			
+			var myQuo = new Instance("myquo");
+			document.writeln(myQuo.status)
+		</script>
+	</body>
+</html>

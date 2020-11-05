@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>方法调用模式</title>
+	</head>
+	<body>
+		<script>
+			var myObject = {
+				value: 0,
+				increament: function(inc) {
+					this.value += typeof(inc) === 'number'? inc : 1;
+				}
+			};
+			
+			myObject.increament()
+			document.writeln("第一次执行="+myObject.value);
+			document.writeln("<br>")
+			myObject.increament(3)
+			document.writeln("第二次执行="+myObject.value);
+		</script>
+
+	</body>
+</html>

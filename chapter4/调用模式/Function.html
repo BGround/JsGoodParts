@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数调用模式</title>
+	</head>
+	<body>
+		<script>
+			function add(x,y) {
+				return x+y;
+			}
+			
+			var myObject = {
+				value: 1,
+				increament: function(inc) {
+					this.value += typeof(inc) === 'number'? inc : 1;
+				}
+			};
+			
+			myObject.double = function () {
+				// var that = this;
+				
+				var helper = function () {
+					this.value = add(this.value, this.value);
+				}
+				
+				helper(); //函数形式调用helper
+			};
+			
+			myObject.double();
+			document.writeln(myObject.value);
+		</script>	
+	</body>
+</html>
