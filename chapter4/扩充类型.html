@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>扩充类型功能</title>
+	</head>
+	<body>
+		<script>
+			Function.prototype.method = function (name, func) {
+				if(!this.prototype[name])
+					this.prototype[name] = this;
+				return this;
+			}
+			
+			Number.method('integer',function() {
+				return Math[this < 0 ? 'ceil' : 'floor'](this)
+			})
+			
+			String.method('trim', function() {
+				return this.replace(/^\s+\s|$/g, '')
+			})
+			
+			document.writeln((-9 / 3).integer());
+			document.writeln("</br>");
+			document.writeln('"' + " neat ".trim() + '"');
+			
+			var foo = {
+			  hasOwnProperty: function() {
+			    return false;
+			  },
+			  bar: 'Here be dragons'
+			};
+			document.writeln("</br>");
+			document.writeln(foo.hasOwnProperty('bar')); // 始终返回 false
+			document.writeln("</br>");
+			document.writeln(Object.prototype.hasOwnProperty.call(foo,'bar'));
+			
+		</script>
+	</body>
+</html>
