@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>排序Array</title>
+	</head>
+	<body>
+		<script>
+			//1.只有一种基本数据类型, 字符如果大小写不重要，
+			let arr = [22, 1, 42, 9];
+			let str = ['a', 'b', 'bb', 'aa'];
+			
+			//倒排序
+			arr.sort((a, b) => b - a); // [9,4,2,1]
+			str.sort(function(c, d){
+				c > d ? -1 : 1
+			}); // ["bb", "b", "aa", "a"]
+			
+			//正排序
+			arr.sort((a,b) => a-b); // [1,2,4,9]
+			str.sort(function(c, d){
+				c > d ? 1 : -1
+			}); // ["a", "aa", "b", "bb"]
+			
+			//2.有NUmber和String, 在ascii码中，0~9 < a~z < A~Z,
+			//如果大小写不重要，
+			let m = ["b", "aa", "a", 22, 1, 42, 9]
+			m.sort(function(a,b) {
+				if(a === b)
+					return 0;
+				if(typeof(a) === typeof(b)) {
+					return a > b ? -1 : 1
+				}
+				return typeof(a) > typeof(b) ? -1 : 1
+			})     //["b", "aa", "a", 42, 22, 9, 1]
+			
+			//3.Array的比较
+			
+		</script>
+	</body>
+</html>
