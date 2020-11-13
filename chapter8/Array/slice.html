@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>slice实现浅拷贝</title>
+	</head>
+	<body>
+		<script>
+			let arr = [0,1,[2,3],4]
+			let b = arr.slice()
+			arr[0] = 1
+			arr[2][0] = 1
+			document.writeln(b)
+			console.log(b)
+		</script>
+	</body>
+</html>

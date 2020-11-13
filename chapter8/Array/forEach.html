@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Array.prototype.forEach方法</title>
+	</head>
+	<body>
+		<script>
+			try {
+			    var arr = [1, 2, 3, 4];
+			    arr.forEach(function (item, index) {
+			        //跳出条件
+			        if (item === 3) {
+			            throw new Error("LoopTerminates");
+			        }
+			        //do something
+			        console.log(item);
+			    });
+			} catch (e) {
+			    if (e.message !== "LoopTerminates") throw e;
+				console.log(e);
+			};
+		</script>
+	</body>
+</html>
