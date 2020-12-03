@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>删除或替换改变原数组,并返回删除的元素所组成的数组splice</title>
+	</head>
+	<body>
+		<script>
+			var arr = [1,2,3,4]
+			//从第2位开始删除1个元素,插入a和b
+			var newArr = arr.splice(2,1,'a','b')
+			console.log(arr) //[1, 2, "a", "b", 4]
+			console.log(newArr) //[3]
+		</script>
+	</body>
+</html>

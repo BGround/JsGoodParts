@@ -7,7 +7,7 @@
 	<body>
 		<script>
 			let arr = [0,1,[2,3],4]
-			let b = arr.slice()
+			let b = arr.slice() // b浅拷贝arr
 			arr[0] = 1
 			arr[2][0] = 1
 			document.writeln(b)

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>字符串的slice方法</title>
+	</head>
+	<body>
+		<script>
+			//返回一个从原字符串中提取出来的新字符串 str.slice(beginIndex[, endIndex])
+			//beginIndex和endIndex都是以0为基数，如果是负数，则strLength + beginIndex(endIndex)
+			let str = 'The morning'
+			str.slice(-3) //'ing'
+			str.slice(-3,-1) // 'in'
+			str.slice(-3,-1) // ''
+			str.slice(0, -1) // 'The mornin'
+		</script>
+	</body>
+</html>
