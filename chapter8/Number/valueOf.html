@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>返回一个被Number对象包装的原始值</title>
+	</head>
+	<body>
+		<script>
+			let numobj = new Number(10)
+			//返回值是Object
+			typeof numobj
+			
+			//返回值是Number
+			let num = Number.valueOf(numobj)
+			typeof num
+		</script>
+	</body>
+</html>
